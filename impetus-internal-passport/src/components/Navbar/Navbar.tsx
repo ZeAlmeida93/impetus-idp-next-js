@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from './Navbar.module.scss';
-import logo from '../Logo/logo-teste.svg'; // Import the SVG file
+import desktopLogo from '../Logo/logo-teste.svg'; // Import the SVG file for desktop
+import mobileLogo from '../Logo/mobile-logo.svg'; // Import the SVG file for mobile
 
 const Navbar: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +16,18 @@ const Navbar: React.FC = () => {
         <nav className={styles.navbar}>
             <div className={styles.logo}>
                 <a href="/">
-                    <img width="100%" src={logo} alt="Logo" />
+                <img
+                        className={styles['desktop-logo']}
+                        width="100%"
+                        src={desktopLogo}
+                        alt="Desktop Logo"
+                    />
+                    <img
+                        className={styles['mobile-logo']}
+                        width="100%"
+                        src={mobileLogo}
+                        alt="Mobile Logo"
+                    />
                 </a>
             </div>
             <ul className={`${styles.links} ${isOpen ? styles.open : ''}`}>

@@ -2,6 +2,7 @@
 
 .navbar {
     display: flex;
+    position: sticky;
     justify-content: space-between;
     align-items: center;
     background-color: #333;
@@ -16,10 +17,22 @@
     max-width: 7.5rem; 
     min-width: 6rem;
 
+.desktop-logo {
+
+    display: flex;
+}
+
+    .mobile-logo {
+
+        display: none;
+    }
+
+
+
 
 a {
     color: #fff;
-    font-size: 24px;
+    font-size: clamp(1rem, 1.1696rem + 1.1963vw, 2.65rem);
     text-decoration: none;
   }
 }
@@ -42,7 +55,7 @@ a {
 .links li a {
     color: #fff;
     text-decoration: none;
-    font-size: 18px;
+    font-size: clamp(0.7rem, 1rem + 1.1963vw, 1.15rem);
 }
 
 .toggle {
@@ -89,9 +102,25 @@ a {
 /* Media Queries for Mobile */
 @media (max-width: 768px) {
 
+    .logo {
+
+
+        .desktop-logo {
+
+            display: none;
+        }
+
+
+        .mobile-logo {
+
+            display: flex;
+            width: 25%;
+        }
+    }
+
     .navbar {
 
-        padding: 15px 20px 15px 15px;
+        padding: 20px 20px 20px 15px;
 
     }
 
